@@ -1,10 +1,13 @@
-package com.example.Department;
+package com.example.Department.services;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.example.Department.Model.Employee;
+import com.example.Department.Repository.Repository;
 
 @Service
 public class serviceImpl implements service {

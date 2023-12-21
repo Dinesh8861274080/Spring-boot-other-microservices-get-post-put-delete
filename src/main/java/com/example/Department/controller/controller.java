@@ -1,7 +1,6 @@
-package com.example.Department;
+package com.example.Department.controller;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +13,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.Department.Model.Employee;
+import com.example.Department.services.service;
+
 @RestController
 @RequestMapping("api")
-public class Controller {
+public class controller {
 	
 	@Autowired
 	private service service;
@@ -36,8 +38,15 @@ public class Controller {
 	}
 	@DeleteMapping("delete/{id}")
 	public String deleteById(@PathVariable(value = "id") Integer id) {
-		service.DeleteById(id);
-		return "deleted success " +(id) ;
+		try {
+			service.DeleteById(id);
+			return "deleted success " +(id) ;
+		}catch (Exception e) {
+			// TODO: handle exception
+		} {
+			return "item not exist";
+		}
+
 	}
 	
 	@PutMapping("update")

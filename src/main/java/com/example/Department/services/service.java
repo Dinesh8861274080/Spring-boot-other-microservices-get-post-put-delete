@@ -1,7 +1,9 @@
-package com.example.Department;
+package com.example.Department.services;
 
 import java.util.List;
 import java.util.Optional;
+
+import com.example.Department.Model.Employee;
 
 public interface service {
 
